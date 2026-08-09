@@ -196,3 +196,7 @@ cd ../frontend && npm run build:demo
 新增 `POST /api/qms/sampling-plan`，根据批量、历史不良率、供应商风险、关键特性和近期质量逸出推荐样本量、检验级别与接收数。高风险供应商自动进入 `TIGHTENED` 加严检验，关键特性执行零接收数判定，并返回需要追加的检验动作。
 
 万件批次、高风险供应商与关键特性组合已通过集成测试，推荐样本量可稳定复现。
+
+## CAPA 有效性复核
+
+新增 `POST /api/qms/insights/capa-effectiveness`，使用整改前后缺陷率、目标降幅、验证样本、问题复发和逾期措施判断 CAPA 是否 `EFFECTIVE / EXTEND / REOPEN`。系统会提示扩充样本、完成逾期措施或重新验证根因，避免形式化关闭质量问题。
