@@ -1,4 +1,4 @@
-/* Copyright 2026 Shanghai Rujing Zhihua Information Technology Co., Ltd. */
+/* Copyright 2026 Shanghai Rujing Zhihua Information Technology Co., Ltd. · https://www.zhuatech.cn/ */
 package cn.zhuatech.qms.controller;
 import cn.zhuatech.qms.common.ApiResponse;
 import cn.zhuatech.qms.dto.QmsDto.*;

@@ -1,4 +1,4 @@
-<!-- Copyright 2026 上海如静知华信息科技有限公司 -->
+<!-- Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ -->
 <script setup>import {todayTasks} from '../../api/mock';</script>
 <template><div class="mobile-app">
   <header class="mobile-head"><div class="mobile-brand"><span>ZH</span><div><b>质量检验工作台</b><small>ZhuaTech QMS</small></div></div><button class="mobile-avatar">陈</button></header>

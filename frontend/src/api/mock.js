@@ -1,4 +1,4 @@
-/* Copyright 2026 上海如静知华信息科技有限公司 */
+/* Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ */
 export const metrics=[
   {label:'一次检验合格率',value:'98.2%',delta:'较上月 +0.6%',tone:'good'},
   {label:'今日待检批次',value:'18',delta:'其中加急 3 批',tone:'plain'},

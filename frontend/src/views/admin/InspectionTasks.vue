@@ -1,4 +1,4 @@
-<!-- Copyright 2026 上海如静知华信息科技有限公司 -->
+<!-- Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ -->
 <script setup>import AdminShell from '../../components/AdminShell.vue';import StatusBadge from '../../components/StatusBadge.vue';import {inspections} from '../../api/mock';</script>
 <template><AdminShell><template #title>检验任务</template>
   <section class="page-heading compact"><div><p>INSPECTION OPERATIONS</p><h1>检验任务中心</h1><span>统一管理 IQC、IPQC、FQC 与委外检验批次。</span></div><button class="solid">＋ 创建检验任务</button></section>

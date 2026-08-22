@@ -1,4 +1,4 @@
-<!-- Copyright 2026 上海如静知华信息科技有限公司 -->
+<!-- Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ -->
 <script setup>
 const groups=[
   {label:'质量运营',items:[['/admin/dashboard','质量驾驶舱','▦'],['/admin/inspections','检验任务','✓'],['/admin/nonconformance','不合格与 CAPA','◇']]},

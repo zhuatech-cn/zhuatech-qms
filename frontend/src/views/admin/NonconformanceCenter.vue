@@ -1,4 +1,4 @@
-<!-- Copyright 2026 上海如静知华信息科技有限公司 -->
+<!-- Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ -->
 <script setup>import AdminShell from '../../components/AdminShell.vue';import StatusBadge from '../../components/StatusBadge.vue';import {risks,capa} from '../../api/mock';</script>
 <template><AdminShell><template #title>不合格与 CAPA</template>
   <section class="page-heading compact"><div><p>NONCONFORMANCE & CAPA</p><h1>质量问题闭环中心</h1><span>从问题登记、评审处置到纠正预防措施与效果验证。</span></div><div><button class="soft">8D 报告模板</button><button class="solid">＋ 登记不合格</button></div></section>
