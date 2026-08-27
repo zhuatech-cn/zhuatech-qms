@@ -5,9 +5,10 @@ import QualityDashboard from '../views/admin/QualityDashboard.vue';
 import InspectionTasks from '../views/admin/InspectionTasks.vue';
 import NonconformanceCenter from '../views/admin/NonconformanceCenter.vue';
 import InspectorWorkbench from '../views/inspector/InspectorWorkbench.vue';
+import QualityGovernance from '../views/admin/QualityGovernance.vue';
 export default createRouter({history:createWebHistory(),routes:[
   {path:'/',redirect:'/admin/dashboard'},{path:'/login',component:LoginView},
-  {path:'/admin/dashboard',component:QualityDashboard},{path:'/admin/inspections',component:InspectionTasks},
+  {path:'/admin/dashboard',component:QualityDashboard},{path:'/admin/governance',component:QualityGovernance},{path:'/admin/inspections',component:InspectionTasks},
   {path:'/admin/nonconformance',component:NonconformanceCenter},{path:'/inspector/workbench',component:InspectorWorkbench}
   ,{path:'/admin/standards',component:InspectionTasks},{path:'/admin/records',component:InspectionTasks},
   {path:'/admin/supplier-quality',component:QualityDashboard},{path:'/admin/access',component:QualityDashboard},

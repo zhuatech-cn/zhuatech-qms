@@ -1,0 +1,8 @@
+-- Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/
+CREATE TABLE deep_qms_plan (id BIGINT PRIMARY KEY AUTO_INCREMENT,plan_no VARCHAR(255) NOT NULL,material_code VARCHAR(255),supplier_code VARCHAR(255),aql DOUBLE NOT NULL,acceptance_number INT NOT NULL,status VARCHAR(32) NOT NULL,lock_version BIGINT NOT NULL,UNIQUE KEY uk_deep_qms_plan(plan_no));
+CREATE TABLE deep_qms_inspection (id BIGINT PRIMARY KEY AUTO_INCREMENT,inspection_no VARCHAR(255) NOT NULL,plan_id BIGINT,lot_qty INT NOT NULL,sample_qty INT NOT NULL,defect_qty INT NOT NULL,result VARCHAR(32) NOT NULL,status VARCHAR(32) NOT NULL,completed_at DATETIME(6),lock_version BIGINT NOT NULL,UNIQUE KEY uk_deep_qms_inspection(inspection_no));
+CREATE TABLE deep_qms_nc (id BIGINT PRIMARY KEY AUTO_INCREMENT,nc_no VARCHAR(255) NOT NULL,inspection_id BIGINT,severity VARCHAR(32),description VARCHAR(255),disposition VARCHAR(32),status VARCHAR(32) NOT NULL,lock_version BIGINT NOT NULL,UNIQUE KEY uk_deep_qms_nc(nc_no));
+CREATE TABLE deep_qms_capa (id BIGINT PRIMARY KEY AUTO_INCREMENT,capa_no VARCHAR(255) NOT NULL,nc_id BIGINT,root_cause VARCHAR(255),corrective_action VARCHAR(255),preventive_action VARCHAR(255),evidence_hash VARCHAR(255),status VARCHAR(32) NOT NULL,lock_version BIGINT NOT NULL,UNIQUE KEY uk_deep_qms_capa(capa_no));
+CREATE TABLE deep_qms_audit (id BIGINT PRIMARY KEY AUTO_INCREMENT,action VARCHAR(255),aggregate_no VARCHAR(255),detail VARCHAR(255),created_at DATETIME(6));
+CREATE INDEX idx_deep_qms_inspection_result ON deep_qms_inspection(status,result,completed_at);
+CREATE INDEX idx_deep_qms_nc_status ON deep_qms_nc(status,severity);

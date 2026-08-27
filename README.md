@@ -1,5 +1,8 @@
 # ZhuaTech QMS · 知华科技质量管理系统
 
+## 质量闭环深化（2026-08）
+
+已实现 AQL/接收数判定、抽样检验、自动 NCR、处置约束、CAPA 整改证据与有效性验证。详见 [QMS 企业质量闭环说明](docs/ENTERPRISE_DEEPENING.md)。
 > 一套面向制造企业的质量管理系统社区源码版，把 **检验任务、质量判定、不合格品、CAPA 与质量分析** 串成可追踪的业务闭环。
 
 [![Java](https://img.shields.io/badge/Java-21-274b4b?logo=openjdk)](backend/pom.xml)

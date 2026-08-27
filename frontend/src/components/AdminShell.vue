@@ -1,7 +1,7 @@
 <!-- Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ -->
 <script setup>
 const groups=[
-  {label:'质量运营',items:[['/admin/dashboard','质量驾驶舱','▦'],['/admin/inspections','检验任务','✓'],['/admin/nonconformance','不合格与 CAPA','◇']]},
+  {label:'质量运营',items:[['/admin/dashboard','质量驾驶舱','▦'],['/admin/governance','质量闭环治理','◎'],['/admin/inspections','检验任务','✓'],['/admin/nonconformance','不合格与 CAPA','◇']]},
   {label:'质量基础',items:[['/admin/standards','检验标准','≡'],['/admin/records','质量档案','▤'],['/admin/supplier-quality','供应商质量','◎']]},
   {label:'系统配置',items:[['/admin/access','组织与权限','♙'],['/admin/audit','审计记录','↻']]}
 ]
