@@ -1,5 +1,9 @@
 # ZhuaTech QMS · 知华科技质量管理系统
 
+## 企业级增强：CAPA 关闭治理
+
+新增根因与有效性验证、样本量、复发检查、文控培训、残余风险、独立 QA 审批、逾期升级和关闭后监测，详见[CAPA 关闭治理](docs/ENTERPRISE_CAPA_CLOSURE_GOVERNANCE.md)。
+
 ## 质量闭环深化（2026-08）
 
 已实现 AQL/接收数判定、抽样检验、自动 NCR、处置约束、CAPA 整改证据与有效性验证。详见 [QMS 企业质量闭环说明](docs/ENTERPRISE_DEEPENING.md)。
