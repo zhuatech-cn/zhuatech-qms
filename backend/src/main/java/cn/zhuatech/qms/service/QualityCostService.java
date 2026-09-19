@@ -10,8 +10,14 @@ import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class QualityCostService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Result analyze(Request request) {
         BigDecimal conformanceCost = request.preventionCost().add(request.appraisalCost());
         BigDecimal failureCost = request.internalFailureCost().add(request.externalFailureCost());
@@ -29,11 +35,17 @@ public class QualityCostService {
         return new Result(request.period(), conformanceCost, failureCost, total, copqRate, preventionShare, status, actions);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(@NotBlank String period, @DecimalMin("0.01") BigDecimal revenue,
                           @DecimalMin("0") BigDecimal preventionCost,
                           @DecimalMin("0") BigDecimal appraisalCost,
                           @DecimalMin("0") BigDecimal internalFailureCost,
                           @DecimalMin("0") BigDecimal externalFailureCost) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Result(String period, BigDecimal conformanceCost, BigDecimal failureCost,
                          BigDecimal totalQualityCost, BigDecimal copqRate, BigDecimal preventionShare,
                          String status, List<String> actions) {}

@@ -10,9 +10,15 @@ import java.util.regex.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @SpringBootTest @AutoConfigureMockMvc
 class QmsApiIntegrationTests {
     @Autowired MockMvc mvc;
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     private String login() throws Exception {
         String json=mvc.perform(post("/api/auth/login").contentType(MediaType.APPLICATION_JSON)
                 .content("{\"username\":\"admin\",\"password\":\"admin123\"}"))
@@ -22,11 +28,17 @@ class QmsApiIntegrationTests {
         if(!matcher.find())throw new AssertionError("登录响应中缺少 token");
         return matcher.group(1);
     }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test void adminCanReadQualityDashboard() throws Exception {
         mvc.perform(get("/api/qms/dashboard").header("Authorization","Bearer "+login()))
                 .andExpect(status().isOk()).andExpect(jsonPath("$.data.pendingInspection").isNumber())
                 .andExpect(jsonPath("$.data.failedLots").value(1)).andExpect(jsonPath("$.data.openNc").value(3));
     }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test void adminCanCreateInspectionLot() throws Exception {
         String body="{\"materialCode\":\"MAT-TEST-01\",\"materialName\":\"测试物料\",\"sourceType\":\"来料检验\",\"sourceRef\":\"GRN-TEST\",\"supplierName\":\"示例供应商\",\"batchQty\":100,\"sampleQty\":10,\"plannedDate\":\"2026-07-31\",\"inspector\":\"测试员\"}";
         mvc.perform(post("/api/qms/inspections").header("Authorization","Bearer "+login())
@@ -34,6 +46,9 @@ class QmsApiIntegrationTests {
                 .andExpect(jsonPath("$.data.materialCode").value("MAT-TEST-01"))
                 .andExpect(jsonPath("$.data.status").value("待检验"));
     }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test void adminCanRecommendTightenedSamplingPlan() throws Exception {
         mvc.perform(post("/api/qms/sampling-plan").header("Authorization","Bearer "+login())
                 .contentType(MediaType.APPLICATION_JSON)
@@ -42,5 +57,8 @@ class QmsApiIntegrationTests {
             .andExpect(jsonPath("$.data.inspectionLevel").value("TIGHTENED"))
             .andExpect(jsonPath("$.data.acceptanceNumber").value(0));
     }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test void anonymousRequestIsDenied() throws Exception {mvc.perform(get("/api/qms/dashboard")).andExpect(status().isForbidden());}
 }

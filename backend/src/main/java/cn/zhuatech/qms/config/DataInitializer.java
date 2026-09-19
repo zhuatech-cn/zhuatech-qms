@@ -9,8 +9,14 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import java.time.LocalDate;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Configuration
 public class DataInitializer {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Bean
     CommandLineRunner seed(UserRepository users,InspectionLotRepository lots,NonconformanceRepository ncs,
                            CapaActionRepository capas,PasswordEncoder encoder){return args->{if(users.count()>0)return;

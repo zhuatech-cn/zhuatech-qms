@@ -6,6 +6,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import java.time.LocalDate;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Entity
 @Table(name = "qms_nonconformance")
 public class Nonconformance extends BaseEntity {
@@ -19,16 +22,52 @@ public class Nonconformance extends BaseEntity {
     @Column(nullable = false, length = 24) private String status;
     @Column(nullable = false) private LocalDate dueDate;
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     protected Nonconformance() {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Nonconformance(String ncNo, String lotNo, String defectType, String severity,
                           String description, int quantity, String owner, String status, LocalDate dueDate) {
         this.ncNo=ncNo; this.lotNo=lotNo; this.defectType=defectType; this.severity=severity;
         this.description=description; this.quantity=quantity; this.owner=owner; this.status=status; this.dueDate=dueDate;
     }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public void moveTo(String status){this.status=status;}
-    public String getNcNo(){return ncNo;} public String getLotNo(){return lotNo;}
-    public String getDefectType(){return defectType;} public String getSeverity(){return severity;}
-    public String getDescription(){return description;} public int getQuantity(){return quantity;}
-    public String getOwner(){return owner;} public String getStatus(){return status;}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
+    public String getNcNo(){return ncNo;} /**
+                                           * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+                                           */
+public String getLotNo(){return lotNo;}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
+    public String getDefectType(){return defectType;} /**
+                                                       * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+                                                       */
+public String getSeverity(){return severity;}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
+    public String getDescription(){return description;} /**
+                                                         * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+                                                         */
+public int getQuantity(){return quantity;}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
+    public String getOwner(){return owner;} /**
+                                             * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+                                             */
+public String getStatus(){return status;}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public LocalDate getDueDate(){return dueDate;}
 }

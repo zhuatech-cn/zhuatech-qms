@@ -12,11 +12,20 @@ import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 @Transactional(readOnly=true)
 public class QmsService {
     private final InspectionLotRepository lots; private final NonconformanceRepository ncs; private final CapaActionRepository capas;
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public QmsService(InspectionLotRepository lots,NonconformanceRepository ncs,CapaActionRepository capas){this.lots=lots;this.ncs=ncs;this.capas=capas;}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Dashboard dashboard(){
         var all=lots.findAllByOrderByPlannedDateDesc(); long completed=all.stream().filter(l->"已完成".equals(l.getStatus())).count();
         long passed=all.stream().filter(l->"合格".equals(l.getResult())).count(); double fpy=completed==0?0:Math.round(passed*1000.0/completed)/10.0;
@@ -25,11 +34,32 @@ public class QmsService {
                 all.stream().filter(l->"待检验".equals(l.getStatus())).limit(5).map(InspectionView::from).toList(),
                 ncs.findAllByOrderByDueDateAsc().stream().filter(n->!"已关闭".equals(n.getStatus())).limit(5).map(NcView::from).toList());
     }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public List<InspectionView> inspections(){return lots.findAllByOrderByPlannedDateDesc().stream().map(InspectionView::from).toList();}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public List<NcView> nonconformances(){return ncs.findAllByOrderByDueDateAsc().stream().map(NcView::from).toList();}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public List<CapaView> capaActions(){return capas.findAllByOrderByDueDateAsc().stream().map(CapaView::from).toList();}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Transactional public InspectionView createLot(CreateLotRequest r){String no="IQC-"+LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss"));return InspectionView.from(lots.save(new InspectionLot(no,r.materialCode(),r.materialName(),r.sourceType(),r.sourceRef(),r.supplierName(),r.batchQty(),r.sampleQty(),r.plannedDate(),r.inspector(),"待检验")));}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Transactional public InspectionView completeInspection(Long id,CompleteInspectionRequest r){var lot=lots.findById(id).orElseThrow(()->new BusinessException("检验批不存在"));if("已完成".equals(lot.getStatus()))throw new BusinessException("检验批已完成，不能重复提交");if(!List.of("合格","不合格","让步接收").contains(r.result()))throw new BusinessException("检验结果不合法");lot.complete(r.result(),r.defectQty(),r.remarks());return InspectionView.from(lot);}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Transactional public NcView createNonconformance(CreateNcRequest r){String no="NCR-"+LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss"));return NcView.from(ncs.save(new Nonconformance(no,r.lotNo(),r.defectType(),r.severity(),r.description(),r.quantity(),r.owner(),"待评审",r.dueDate())));}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Transactional public CapaView updateProgress(Long id,UpdateProgressRequest r){var action=capas.findById(id).orElseThrow(()->new BusinessException("CAPA 措施不存在"));action.updateProgress(r.progress());return CapaView.from(action);}
 }

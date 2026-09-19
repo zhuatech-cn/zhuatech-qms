@@ -12,8 +12,14 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class SamplingPlanService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Result recommend(Request request) {
         double multiplier = 1 + request.historicalDefectRate() * 4
             + request.supplierRisk() / 100.0 + (request.criticalCharacteristic() ? .75 : 0)
@@ -32,10 +38,16 @@ public class SamplingPlanService {
         return new Result(request.materialCode(), sampleSize, inspectionLevel, acceptanceNumber, actions);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(@NotBlank String materialCode, @Positive int lotSize,
                           @DecimalMin("0") @DecimalMax("1") double historicalDefectRate,
                           @Min(0) @Max(100) int supplierRisk, boolean criticalCharacteristic,
                           @Min(0) int recentEscapes) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Result(String materialCode, int sampleSize, String inspectionLevel,
                          int acceptanceNumber, List<String> actions) {}
 }

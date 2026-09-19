@@ -1,8 +1,14 @@
 /* Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ */
 package cn.zhuatech.qms.service;
 import jakarta.validation.constraints.*;import org.springframework.stereotype.Service;import java.util.*;
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class CapaClosureGovernanceService{
+ /**
+  * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+  */
  public Assessment assess(Request r){
   List<String> blockers=new ArrayList<>();List<String> actions=new ArrayList<>();
   if(!r.rootCauseValidated())blockers.add("根因尚未通过验证");
@@ -24,12 +30,24 @@ public class CapaClosureGovernanceService{
   String route=risk==RiskLevel.CRITICAL?"CAPA负责人→QA经理→管理者代表":risk==RiskLevel.HIGH?"CAPA负责人→QA经理":"CAPA负责人→QA审批人";
   return new Assessment(r.capaNo(),decision,risk,route,List.copyOf(blockers),List.copyOf(actions));
  }
+ /**
+  * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+  */
  public record Request(@NotBlank String capaNo,@NotBlank String ownerId,@NotBlank String qaApproverId,
   @Min(0)int effectivenessSampleSize,@Min(1)int minimumSampleSize,boolean rootCauseValidated,
   boolean correctiveActionsCompleted,boolean effectivenessWindowCompleted,boolean recurrenceDetected,
   boolean objectiveEvidenceAttached,boolean procedureChangeRequired,boolean documentAndTrainingUpdated,
   boolean riskReassessed,boolean residualRiskHigh,boolean linkedRecordsResolved,boolean overdue,
   boolean overdueEscalated,boolean auditTrailComplete,boolean postClosureMonitoringScheduled){}
+ /**
+  * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+  */
  public record Assessment(String capaNo,Decision decision,RiskLevel riskLevel,String approvalRoute,List<String> blockers,List<String> actions){}
- public enum Decision{CLOSE,REVIEW,REOPEN}public enum RiskLevel{NORMAL,HIGH,CRITICAL}
+ /**
+  * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+  */
+ public enum Decision{CLOSE,REVIEW,REOPEN}/**
+                                           * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+                                           */
+public enum RiskLevel{NORMAL,HIGH,CRITICAL}
 }

@@ -9,12 +9,21 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @RestController
 @RequestMapping("/api/qms")
 public class QualityPlanningController {
     private final SamplingPlanService service;
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public QualityPlanningController(SamplingPlanService service) { this.service = service; }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @PostMapping("/sampling-plan")
     public ApiResponse<SamplingPlanService.Result> recommend(@Valid @RequestBody SamplingPlanService.Request request) {
         return ApiResponse.ok(service.recommend(request));

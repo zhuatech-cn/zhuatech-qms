@@ -6,9 +6,15 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 class CapaEffectivenessServiceTests {
     private final CapaEffectivenessService service = new CapaEffectivenessService();
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test
     void closesEffectiveCapaAfterSustainedReduction() {
         var result = service.review(new CapaEffectivenessService.Request(
@@ -18,6 +24,9 @@ class CapaEffectivenessServiceTests {
         assertEquals("EFFECTIVE", result.decision());
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test
     void reopensCapaWhenDefectRecurs() {
         var result = service.review(new CapaEffectivenessService.Request(

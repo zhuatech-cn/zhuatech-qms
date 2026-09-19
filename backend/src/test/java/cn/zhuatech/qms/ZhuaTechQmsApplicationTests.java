@@ -2,4 +2,10 @@
 package cn.zhuatech.qms;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-@SpringBootTest class ZhuaTechQmsApplicationTests {@Test void contextLoads(){}}
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
+@SpringBootTest class ZhuaTechQmsApplicationTests {/**
+                                                    * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+                                                    */
+@Test void contextLoads(){}}

@@ -6,6 +6,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import java.time.LocalDate;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Entity
 @Table(name = "qms_inspection_lot")
 public class InspectionLot extends BaseEntity {
@@ -24,7 +27,13 @@ public class InspectionLot extends BaseEntity {
     @Column(nullable = false) private int defectQty;
     @Column(length = 300) private String remarks;
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     protected InspectionLot() {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public InspectionLot(String lotNo, String materialCode, String materialName, String sourceType,
                          String sourceRef, String supplierName, int batchQty, int sampleQty,
                          LocalDate plannedDate, String inspector, String status) {
@@ -33,14 +42,59 @@ public class InspectionLot extends BaseEntity {
         this.batchQty = batchQty; this.sampleQty = sampleQty; this.plannedDate = plannedDate;
         this.inspector = inspector; this.status = status;
     }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public void complete(String result, int defectQty, String remarks) {
         this.result = result; this.defectQty = defectQty; this.remarks = remarks; this.status = "已完成";
     }
-    public String getLotNo(){return lotNo;} public String getMaterialCode(){return materialCode;}
-    public String getMaterialName(){return materialName;} public String getSourceType(){return sourceType;}
-    public String getSourceRef(){return sourceRef;} public String getSupplierName(){return supplierName;}
-    public int getBatchQty(){return batchQty;} public int getSampleQty(){return sampleQty;}
-    public LocalDate getPlannedDate(){return plannedDate;} public String getInspector(){return inspector;}
-    public String getStatus(){return status;} public String getResult(){return result;}
-    public int getDefectQty(){return defectQty;} public String getRemarks(){return remarks;}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
+    public String getLotNo(){return lotNo;} /**
+                                             * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+                                             */
+public String getMaterialCode(){return materialCode;}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
+    public String getMaterialName(){return materialName;} /**
+                                                           * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+                                                           */
+public String getSourceType(){return sourceType;}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
+    public String getSourceRef(){return sourceRef;} /**
+                                                     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+                                                     */
+public String getSupplierName(){return supplierName;}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
+    public int getBatchQty(){return batchQty;} /**
+                                                * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+                                                */
+public int getSampleQty(){return sampleQty;}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
+    public LocalDate getPlannedDate(){return plannedDate;} /**
+                                                            * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+                                                            */
+public String getInspector(){return inspector;}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
+    public String getStatus(){return status;} /**
+                                               * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+                                               */
+public String getResult(){return result;}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
+    public int getDefectQty(){return defectQty;} /**
+                                                  * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+                                                  */
+public String getRemarks(){return remarks;}
 }
